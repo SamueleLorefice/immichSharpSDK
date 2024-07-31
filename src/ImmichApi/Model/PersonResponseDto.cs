@@ -45,13 +45,8 @@ namespace ImmichApi.Model
         /// <param name="name">name (required).</param>
         /// <param name="thumbnailPath">thumbnailPath (required).</param>
         /// <param name="updatedAt">This property was added in v1.107.0.</param>
-        public PersonResponseDto(DateOnly birthDate = default(DateOnly), string id = default(string), bool isHidden = default(bool), string name = default(string), string thumbnailPath = default(string), DateTime updatedAt = default(DateTime))
+        public PersonResponseDto(DateOnly? birthDate = null, string id = default(string), bool isHidden = default(bool), string name = default(string), string thumbnailPath = default(string), DateTime updatedAt = default(DateTime))
         {
-            // to ensure "birthDate" is required (not null)
-            if (birthDate == null)
-            {
-                throw new ArgumentNullException("birthDate is a required property for PersonResponseDto and cannot be null");
-            }
             this.BirthDate = birthDate;
             // to ensure "id" is required (not null)
             if (id == null)
@@ -79,7 +74,7 @@ namespace ImmichApi.Model
         /// Gets or Sets BirthDate
         /// </summary>
         [DataMember(Name = "birthDate", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly BirthDate { get; set; }
+        public DateOnly? BirthDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
