@@ -37,7 +37,7 @@ namespace ImmichApi.Model
         /// <param name="birthDate">Person date of birth. Note: the mobile app cannot currently set the birth date to null..</param>
         /// <param name="isHidden">Person visibility.</param>
         /// <param name="name">Person name..</param>
-        public PersonCreateDto(DateOnly birthDate = default(DateOnly), bool isHidden = default(bool), string name = default(string))
+        public PersonCreateDto(DateOnly? birthDate = null, bool isHidden = false, string name = default(string))
         {
             this.BirthDate = birthDate;
             this.IsHidden = isHidden;
@@ -49,14 +49,14 @@ namespace ImmichApi.Model
         /// </summary>
         /// <value>Person date of birth. Note: the mobile app cannot currently set the birth date to null.</value>
         [DataMember(Name = "birthDate", EmitDefaultValue = true)]
-        public DateOnly BirthDate { get; set; }
+        public DateOnly? BirthDate { get; set; }
 
         /// <summary>
         /// Person visibility
         /// </summary>
         /// <value>Person visibility</value>
-        [DataMember(Name = "isHidden", EmitDefaultValue = true)]
-        public bool IsHidden { get; set; }
+        [DataMember(Name = "isHidden", IsRequired = true, EmitDefaultValue = true)]
+        public bool? IsHidden { get; set; }
 
         /// <summary>
         /// Person name.

@@ -46,13 +46,8 @@ namespace ImmichApi.Model
         /// <param name="name">name (required).</param>
         /// <param name="thumbnailPath">thumbnailPath (required).</param>
         /// <param name="updatedAt">This property was added in v1.107.0.</param>
-        public PersonWithFacesResponseDto(DateOnly birthDate = default(DateOnly), List<AssetFaceWithoutPersonResponseDto> faces = default(List<AssetFaceWithoutPersonResponseDto>), string id = default(string), bool isHidden = default(bool), string name = default(string), string thumbnailPath = default(string), DateTime updatedAt = default(DateTime))
+        public PersonWithFacesResponseDto(DateOnly? birthDate = null, List<AssetFaceWithoutPersonResponseDto> faces = default(List<AssetFaceWithoutPersonResponseDto>), string id = default(string), bool isHidden = default(bool), string name = default(string), string thumbnailPath = default(string), DateTime updatedAt = default(DateTime))
         {
-            // to ensure "birthDate" is required (not null)
-            if (birthDate == null)
-            {
-                throw new ArgumentNullException("birthDate is a required property for PersonWithFacesResponseDto and cannot be null");
-            }
             this.BirthDate = birthDate;
             // to ensure "faces" is required (not null)
             if (faces == null)
@@ -85,8 +80,8 @@ namespace ImmichApi.Model
         /// <summary>
         /// Gets or Sets BirthDate
         /// </summary>
-        [DataMember(Name = "birthDate", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly BirthDate { get; set; }
+        [DataMember(Name = "birthDate", IsRequired = false, EmitDefaultValue = true)]
+        public DateOnly? BirthDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Faces

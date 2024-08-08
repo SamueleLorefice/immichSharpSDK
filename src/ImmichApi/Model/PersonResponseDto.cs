@@ -73,7 +73,7 @@ namespace ImmichApi.Model
         /// <summary>
         /// Gets or Sets BirthDate
         /// </summary>
-        [DataMember(Name = "birthDate", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "birthDate", IsRequired = false, EmitDefaultValue = true)]
         public DateOnly? BirthDate { get; set; }
 
         /// <summary>
