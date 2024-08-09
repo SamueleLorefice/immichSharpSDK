@@ -190,19 +190,19 @@ namespace ImmichApi.Model
         /// Gets or Sets IsArchived
         /// </summary>
         [DataMember(Name = "isArchived", EmitDefaultValue = false)]
-        public bool?IsArchived { get; set; }
+        public bool? IsArchived { get; set; }
 
         /// <summary>
         /// Gets or Sets IsEncoded
         /// </summary>
         [DataMember(Name = "isEncoded", EmitDefaultValue = false)]
-        public bool?IsEncoded { get; set; }
+        public bool? IsEncoded { get; set; }
 
         /// <summary>
         /// Gets or Sets IsFavorite
         /// </summary>
         [DataMember(Name = "isFavorite", EmitDefaultValue = false)]
-        public bool?IsFavorite { get; set; }
+        public bool? IsFavorite { get; set; }
 
         /// <summary>
         /// Gets or Sets IsMotion
