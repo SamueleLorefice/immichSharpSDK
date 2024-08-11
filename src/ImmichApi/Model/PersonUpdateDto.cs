@@ -38,7 +38,7 @@ namespace ImmichApi.Model
         /// <param name="featureFaceAssetId">Asset is used to get the feature face thumbnail..</param>
         /// <param name="isHidden">Person visibility.</param>
         /// <param name="name">Person name..</param>
-        public PersonUpdateDto(DateOnly birthDate = default(DateOnly), string featureFaceAssetId = default(string), bool isHidden = default(bool), string name = default(string))
+        public PersonUpdateDto(DateOnly? birthDate = null, string featureFaceAssetId = default(string), bool isHidden = default(bool), string name = default(string))
         {
             this.BirthDate = birthDate;
             this.FeatureFaceAssetId = featureFaceAssetId;
@@ -50,8 +50,8 @@ namespace ImmichApi.Model
         /// Person date of birth. Note: the mobile app cannot currently set the birth date to null.
         /// </summary>
         /// <value>Person date of birth. Note: the mobile app cannot currently set the birth date to null.</value>
-        [DataMember(Name = "birthDate", EmitDefaultValue = true)]
-        public DateOnly BirthDate { get; set; }
+        [DataMember(Name = "birthDate", EmitDefaultValue = false)]
+        public DateOnly? BirthDate { get; set; }
 
         /// <summary>
         /// Asset is used to get the feature face thumbnail.
